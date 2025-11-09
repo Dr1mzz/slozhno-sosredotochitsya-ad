@@ -9,9 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const currentTheme = [...document.documentElement.classList]
     .find((cn) => cn.startsWith('theme-'))
     ?.replace('theme-', '');
-  const themeButtons = [
-    ...document.querySelectorAll('.header__theme-menu-button'),
-  ];
+  const themeButtons = [...document.querySelectorAll('.header__theme-menu-button')];
   setActiveButton(themeButtons, currentTheme);
 
   themeButtons.forEach((button) => {
@@ -43,9 +41,7 @@ function setActiveButton(buttonsArray, theme) {
     target.classList.add('header__theme-menu-button_active');
     target.setAttribute('disabled', true);
   } else {
-    const autoButton = document.querySelector(
-      '.header__theme-menu-button_type_auto'
-    );
+    const autoButton = document.querySelector('.header__theme-menu-button_type_auto');
     autoButton.classList.add('header__theme-menu-button_active');
     autoButton.setAttribute('disabled', true);
   }
